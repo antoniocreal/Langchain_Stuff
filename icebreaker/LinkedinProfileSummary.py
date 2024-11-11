@@ -29,7 +29,7 @@ summary_prompt_template = PromptTemplate(
 llm = ChatOllama(model = 'llama3')
 
 chain = summary_prompt_template | llm | StrOutputParser()
-linkedin_data = scrape_linkedin_profile(linkedin_profile_url="https://www.linkedin.com/in/ant%C3%B3nio-corte-real-840564251/")
+linkedin_data = scrape_linkedin_profile(linkedin_profile_url="https://www.linkedin.com/in/eden-marco/")
 # res = chain.invoke(input={"information": information})
 res = chain.invoke(input={"information": linkedin_data})
 print(res)
