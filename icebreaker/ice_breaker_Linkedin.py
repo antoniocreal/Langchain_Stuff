@@ -1,8 +1,5 @@
-# import os
-
-# if '__name__':
-#     print('Hello Langchain!')
-#     print(os.environ['OPENAI_API_KEY'])
+import os,sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) # To make sure the folders are accessible to this file
 
 from dotenv import load_dotenv
 from langchain.prompts.prompt import PromptTemplate
@@ -12,8 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 from third_parties.linkedin import scrape_linkedin_profile
-
-
+from Agents.Linkedin_lookup_agent import lookup as linkedin_lookup_agent
 
 if __name__ == "__main__":
     load_dotenv()

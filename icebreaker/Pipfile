@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 langchain-ollama = "*"
+tweepy = "*"
 
 [dev-packages]
 

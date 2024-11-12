@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fb45d030c7e964e980dd79839650243cb0648aac3a66b24094cfb0c3db01f9c4"
+            "sha256": "bcb1c64004e2057fd09458c1373b478090999bde9a5c199c31679ff84592d944"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -218,6 +218,13 @@
                 "sha256:f8a84d100f3052233ff0a1d66ae14c5dfc20b7e41a1601de011384f16ee6cb82"
             ],
             "version": "==0.1.142"
+        },
+        "oauthlib": {
+            "hashes": [
+                "sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca",
+                "sha256:9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
+            ],
+            "version": "==3.2.2"
         },
         "ollama": {
             "hashes": [
@@ -463,6 +470,13 @@
             ],
             "version": "==2.32.3"
         },
+        "requests-oauthlib": {
+            "hashes": [
+                "sha256:7d3bdc908f5e9b80137fbc445bf8db94295bb006bcbd9520fef55f28f44ed376",
+                "sha256:a2fb581fb28257a257340bef9dab782e28c599a000b2f8dd837bc41892d4fc6c"
+            ],
+            "version": "==1.4.1"
+        },
         "requests-toolbelt": {
             "hashes": [
                 "sha256:7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6",
@@ -484,11 +498,20 @@
             ],
             "version": "==9.0.0"
         },
+        "tweepy": {
+            "hashes": [
+                "sha256:1f9f1707d6972de6cff6c5fd90dfe6a449cd2e0d70bd40043ffab01e07a06c8c",
+                "sha256:db6d3844ccc0c6d27f339f12ba8acc89912a961da513c1ae50fa2be502a56afb"
+            ],
+            "index": "pypi",
+            "version": "==4.14.0"
+        },
         "typing-extensions": {
             "hashes": [
                 "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
                 "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
             ],
+            "markers": "python_version < '3.13'",
             "version": "==4.12.2"
         },
         "urllib3": {
