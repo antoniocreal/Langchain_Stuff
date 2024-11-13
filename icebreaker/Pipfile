@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 langchain-ollama = "*"
 tweepy = "*"
+langsmith = "*"
+flask = "*"
 
 [dev-packages]
 
