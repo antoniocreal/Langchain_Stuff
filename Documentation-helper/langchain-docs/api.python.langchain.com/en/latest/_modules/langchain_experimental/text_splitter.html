@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <title>langchain_experimental.text_splitter &mdash; 🦜🔗 LangChain 0.2.17</title>
+    
+    <link rel="canonical"
+          href="https://api.python.langchain.com/en/latest/_modules/langchain_experimental/text_splitter.html"/>
+
+    
+
+    <link rel="stylesheet"
+          href="../../_static/css/vendor/bootstrap.min.css"
+          type="text/css"/>
+            <link rel="stylesheet" href="../../_static/pygments.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/sphinx-dropdown.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/panels-bootstrap.min.css" type="text/css"/>
+            <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css"/>
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css"/>
+    <script id="documentation_options" data-url_root="../../"
+            src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="langchain" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/_modules/langchain_experimental/text_splitter.html" /><meta name="readthedocs-http-status" content="200" /></head>
+<body>
+<div class="banner">
+    <p>This is a legacy site. Please use the latest <a href="https://python.langchain.com/v0.2/api_reference/reference.html">v0.2</a> and <a href="https://python.langchain.com/api_reference/">v0.3</a> API references instead.</p>
+</div>
+
+
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container px-0">
+    <button
+      id="sk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="sk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../langchain_api_reference.html">LangChain</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../core_api_reference.html">Core</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../community_api_reference.html">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../experimental_api_reference.html">Experimental</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../text_splitters_api_reference.html">Text splitters</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../airbyte_api_reference.html">airbyte</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../astradb_api_reference.html">astradb</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../aws_api_reference.html">aws</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../azure_dynamic_sessions_api_reference.html">azure-dynamic-sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../box_api_reference.html">box</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../chroma_api_reference.html">chroma</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../cohere_api_reference.html">cohere</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../couchbase_api_reference.html">couchbase</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../elasticsearch_api_reference.html">elasticsearch</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../exa_api_reference.html">exa</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../fireworks_api_reference.html">fireworks</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_community_api_reference.html">google-community</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_genai_api_reference.html">google-genai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../huggingface_api_reference.html">huggingface</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ibm_api_reference.html">ibm</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../milvus_api_reference.html">milvus</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../mistralai_api_reference.html">mistralai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../mongodb_api_reference.html">mongodb</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../nomic_api_reference.html">nomic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ollama_api_reference.html">ollama</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../openai_api_reference.html">openai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../pinecone_api_reference.html">pinecone</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../postgres_api_reference.html">postgres</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../prompty_api_reference.html">prompty</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../qdrant_api_reference.html">qdrant</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../robocorp_api_reference.html">robocorp</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../together_api_reference.html">together</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../unstructured_api_reference.html">unstructured</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../voyageai_api_reference.html">voyageai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../weaviate_api_reference.html">weaviate</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../ai21_api_reference.html">ai21</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../airbyte_api_reference.html">airbyte</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../astradb_api_reference.html">astradb</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../aws_api_reference.html">aws</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../azure_dynamic_sessions_api_reference.html">azure-dynamic-sessions</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../box_api_reference.html">box</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../chroma_api_reference.html">chroma</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../cohere_api_reference.html">cohere</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../couchbase_api_reference.html">couchbase</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../elasticsearch_api_reference.html">elasticsearch</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../exa_api_reference.html">exa</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../fireworks_api_reference.html">fireworks</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../google_community_api_reference.html">google-community</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../google_genai_api_reference.html">google-genai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../groq_api_reference.html">groq</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../huggingface_api_reference.html">huggingface</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../ibm_api_reference.html">ibm</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../milvus_api_reference.html">milvus</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../mistralai_api_reference.html">mistralai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../mongodb_api_reference.html">mongodb</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../nomic_api_reference.html">nomic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../ollama_api_reference.html">ollama</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../openai_api_reference.html">openai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../pinecone_api_reference.html">pinecone</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../postgres_api_reference.html">postgres</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../prompty_api_reference.html">prompty</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../qdrant_api_reference.html">qdrant</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../robocorp_api_reference.html">robocorp</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../together_api_reference.html">together</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../unstructured_api_reference.html">unstructured</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../voyageai_api_reference.html">voyageai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../weaviate_api_reference.html">weaviate</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://python.langchain.com/">Docs</a>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="sk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="sk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="d-flex" id="sk-doc-wrapper">
+        <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
+        <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary"
+               for="sk-toggle-checkbox">Toggle Menu</label>
+        <div id="sk-sidebar-wrapper" class="border-right">
+            <div class="sk-sidebar-toc-wrapper">
+                    <div class="sk-sidebar-toc">
+                        
+                    </div>
+            </div>
+        </div>
+        <div id="sk-page-content-wrapper">
+            <div class="sk-page-content container-fluid body px-md-3" role="main">
+                
+  <h1>Source code for langchain_experimental.text_splitter</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Experimental **text splitter** based on semantic similarity.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">langchain_community.utils.math</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">cosine_similarity</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">langchain_core.documents</span> <span class="kn">import</span> <span class="n">BaseDocumentTransformer</span><span class="p">,</span> <span class="n">Document</span>
+<span class="kn">from</span> <span class="nn">langchain_core.embeddings</span> <span class="kn">import</span> <span class="n">Embeddings</span>
+
+
+<div class="viewcode-block" id="combine_sentences"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.combine_sentences.html#langchain_experimental.text_splitter.combine_sentences">[docs]</a><span class="k">def</span> <span class="nf">combine_sentences</span><span class="p">(</span><span class="n">sentences</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">buffer_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine sentences based on buffer size.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sentences: List of sentences to combine.</span>
+<span class="sd">        buffer_size: Number of sentences to combine. Defaults to 1.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of sentences with combined sentences.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Go through each sentence dict</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+        <span class="c1"># Create a string that will hold the sentences which are joined</span>
+        <span class="n">combined_sentence</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="c1"># Add sentences before the current one, based on the buffer size.</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">buffer_size</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+            <span class="c1"># Check if the index j is not negative</span>
+            <span class="c1"># (to avoid index out of range like on the first one)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Add the sentence at index j to the combined_sentence string</span>
+                <span class="n">combined_sentence</span> <span class="o">+=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+
+        <span class="c1"># Add the current sentence</span>
+        <span class="n">combined_sentence</span> <span class="o">+=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Add sentences after the current one, based on the buffer size</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">buffer_size</span><span class="p">):</span>
+            <span class="c1"># Check if the index j is within the range of the sentences list</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
+                <span class="c1"># Add the sentence at index j to the combined_sentence string</span>
+                <span class="n">combined_sentence</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Then add the whole thing to your dict</span>
+        <span class="c1"># Store the combined sentence in the current sentence dict</span>
+        <span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;combined_sentence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">combined_sentence</span>
+
+    <span class="k">return</span> <span class="n">sentences</span></div>
+
+
+<div class="viewcode-block" id="calculate_cosine_distances"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.calculate_cosine_distances.html#langchain_experimental.text_splitter.calculate_cosine_distances">[docs]</a><span class="k">def</span> <span class="nf">calculate_cosine_distances</span><span class="p">(</span><span class="n">sentences</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate cosine distances between sentences.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sentences: List of sentences to calculate distances for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple of distances and sentences.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">embedding_current</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;combined_sentence_embedding&quot;</span><span class="p">]</span>
+        <span class="n">embedding_next</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;combined_sentence_embedding&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Calculate cosine similarity</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">([</span><span class="n">embedding_current</span><span class="p">],</span> <span class="p">[</span><span class="n">embedding_next</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Convert to cosine distance</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">similarity</span>
+
+        <span class="c1"># Append cosine distance to the list</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+        <span class="c1"># Store distance in the dictionary</span>
+        <span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;distance_to_next&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span>
+
+    <span class="c1"># Optionally handle the last sentence</span>
+    <span class="c1"># sentences[-1][&#39;distance_to_next&#39;] = None  # or a default value</span>
+
+    <span class="k">return</span> <span class="n">distances</span><span class="p">,</span> <span class="n">sentences</span></div>
+
+
+<span class="n">BreakpointThresholdType</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
+    <span class="s2">&quot;percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_deviation&quot;</span><span class="p">,</span> <span class="s2">&quot;interquartile&quot;</span><span class="p">,</span> <span class="s2">&quot;gradient&quot;</span>
+<span class="p">]</span>
+<span class="n">BREAKPOINT_DEFAULTS</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">BreakpointThresholdType</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;percentile&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="s2">&quot;standard_deviation&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;interquartile&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="s2">&quot;gradient&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="SemanticChunker"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker">[docs]</a><span class="k">class</span> <span class="nc">SemanticChunker</span><span class="p">(</span><span class="n">BaseDocumentTransformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Split the text based on semantic similarity.</span>
+
+<span class="sd">    Taken from Greg Kamradt&#39;s wonderful notebook:</span>
+<span class="sd">    https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb</span>
+
+<span class="sd">    All credits to him.</span>
+
+<span class="sd">    At a high level, this splits into sentences, then groups into groups of 3</span>
+<span class="sd">    sentences, and then merges one that are similar in the embedding space.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SemanticChunker.__init__"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">embeddings</span><span class="p">:</span> <span class="n">Embeddings</span><span class="p">,</span>
+        <span class="n">buffer_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">add_start_index</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">breakpoint_threshold_type</span><span class="p">:</span> <span class="n">BreakpointThresholdType</span> <span class="o">=</span> <span class="s2">&quot;percentile&quot;</span><span class="p">,</span>
+        <span class="n">breakpoint_threshold_amount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">number_of_chunks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sentence_split_regex</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(?&lt;=[.?!])\s+&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_start_index</span> <span class="o">=</span> <span class="n">add_start_index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span> <span class="o">=</span> <span class="n">embeddings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_size</span> <span class="o">=</span> <span class="n">buffer_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span> <span class="o">=</span> <span class="n">breakpoint_threshold_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">number_of_chunks</span> <span class="o">=</span> <span class="n">number_of_chunks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sentence_split_regex</span> <span class="o">=</span> <span class="n">sentence_split_regex</span>
+        <span class="k">if</span> <span class="n">breakpoint_threshold_amount</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span> <span class="o">=</span> <span class="n">BREAKPOINT_DEFAULTS</span><span class="p">[</span>
+                <span class="n">breakpoint_threshold_type</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span> <span class="o">=</span> <span class="n">breakpoint_threshold_amount</span></div>
+
+    <span class="k">def</span> <span class="nf">_calculate_breakpoint_threshold</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">distances</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span> <span class="o">==</span> <span class="s2">&quot;percentile&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span>
+                <span class="nb">float</span><span class="p">,</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span><span class="p">),</span>
+            <span class="p">),</span> <span class="n">distances</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span> <span class="o">==</span> <span class="s2">&quot;standard_deviation&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span>
+                <span class="nb">float</span><span class="p">,</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distances</span><span class="p">),</span>
+            <span class="p">),</span> <span class="n">distances</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span> <span class="o">==</span> <span class="s2">&quot;interquartile&quot;</span><span class="p">:</span>
+            <span class="n">q1</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+            <span class="n">iqr</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">-</span> <span class="n">q1</span>
+
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="n">distances</span>
+            <span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span> <span class="o">*</span> <span class="n">iqr</span><span class="p">,</span> <span class="n">distances</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span> <span class="o">==</span> <span class="s2">&quot;gradient&quot;</span><span class="p">:</span>
+            <span class="c1"># Calculate the threshold based on the distribution of gradient of distance array. # noqa: E501</span>
+            <span class="n">distance_gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">distances</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span>
+                <span class="nb">float</span><span class="p">,</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">distance_gradient</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_amount</span><span class="p">),</span>
+            <span class="p">),</span> <span class="n">distance_gradient</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Got unexpected `breakpoint_threshold_type`: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_threshold_type</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_threshold_from_clusters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distances</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the threshold based on the number of chunks.</span>
+<span class="sd">        Inverse of percentile method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_of_chunks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;This should never be called if `number_of_chunks` is None.&quot;</span>
+            <span class="p">)</span>
+        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">distances</span><span class="p">),</span> <span class="mf">0.0</span>
+        <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">100.0</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_chunks</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="n">x2</span><span class="p">)</span>
+
+        <span class="c1"># Linear interpolation formula</span>
+        <span class="k">if</span> <span class="n">x2</span> <span class="o">==</span> <span class="n">x1</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="p">((</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_calculate_sentence_distances</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">single_sentences_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split text into multiple components.&quot;&quot;&quot;</span>
+
+        <span class="n">_sentences</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;sentence&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">single_sentences_list</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="n">combine_sentences</span><span class="p">(</span><span class="n">_sentences</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_size</span><span class="p">)</span>
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">embed_documents</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;combined_sentence&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
+            <span class="n">sentence</span><span class="p">[</span><span class="s2">&quot;combined_sentence_embedding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">embeddings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">calculate_cosine_distances</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SemanticChunker.split_text"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker.split_text">[docs]</a>    <span class="k">def</span> <span class="nf">split_text</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="c1"># Splitting the essay (by default on &#39;.&#39;, &#39;?&#39;, and &#39;!&#39;)</span>
+        <span class="n">single_sentences_list</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sentence_split_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+        <span class="c1"># having len(single_sentences_list) == 1 would cause the following</span>
+        <span class="c1"># np.percentile to fail.</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">single_sentences_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">single_sentences_list</span>
+        <span class="n">distances</span><span class="p">,</span> <span class="n">sentences</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_sentence_distances</span><span class="p">(</span><span class="n">single_sentences_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_of_chunks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">breakpoint_distance_threshold</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold_from_clusters</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+            <span class="n">breakpoint_array</span> <span class="o">=</span> <span class="n">distances</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span>
+                <span class="n">breakpoint_distance_threshold</span><span class="p">,</span>
+                <span class="n">breakpoint_array</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_breakpoint_threshold</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+
+        <span class="n">indices_above_thresh</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">i</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">breakpoint_array</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">breakpoint_distance_threshold</span>
+        <span class="p">]</span>
+
+        <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Iterate through the breakpoints to slice the sentences</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">indices_above_thresh</span><span class="p">:</span>
+            <span class="c1"># The end index is the current breakpoint</span>
+            <span class="n">end_index</span> <span class="o">=</span> <span class="n">index</span>
+
+            <span class="c1"># Slice the sentence_dicts from the current start index to the end index</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">start_index</span> <span class="p">:</span> <span class="n">end_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">combined_text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">group</span><span class="p">])</span>
+            <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combined_text</span><span class="p">)</span>
+
+            <span class="c1"># Update the start index for the next group</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c1"># The last group, if any sentences remain</span>
+        <span class="k">if</span> <span class="n">start_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
+            <span class="n">combined_text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">[</span><span class="n">start_index</span><span class="p">:]])</span>
+            <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combined_text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">chunks</span></div>
+
+<div class="viewcode-block" id="SemanticChunker.create_documents"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker.create_documents">[docs]</a>    <span class="k">def</span> <span class="nf">create_documents</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">texts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">metadatas</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create documents from a list of texts.&quot;&quot;&quot;</span>
+        <span class="n">_metadatas</span> <span class="o">=</span> <span class="n">metadatas</span> <span class="ow">or</span> <span class="p">[{}]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
+        <span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">texts</span><span class="p">):</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+                <span class="n">metadata</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">_metadatas</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_start_index</span><span class="p">:</span>
+                    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;start_index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_index</span>
+                <span class="n">new_doc</span> <span class="o">=</span> <span class="n">Document</span><span class="p">(</span><span class="n">page_content</span><span class="o">=</span><span class="n">chunk</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+                <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_doc</span><span class="p">)</span>
+                <span class="n">start_index</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">documents</span></div>
+
+<div class="viewcode-block" id="SemanticChunker.split_documents"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker.split_documents">[docs]</a>    <span class="k">def</span> <span class="nf">split_documents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split documents.&quot;&quot;&quot;</span>
+        <span class="n">texts</span><span class="p">,</span> <span class="n">metadatas</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+            <span class="n">texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">)</span>
+            <span class="n">metadatas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_documents</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">metadatas</span><span class="o">=</span><span class="n">metadatas</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SemanticChunker.transform_documents"><a class="viewcode-back" href="../../text_splitter/langchain_experimental.text_splitter.SemanticChunker.html#langchain_experimental.text_splitter.SemanticChunker.transform_documents">[docs]</a>    <span class="k">def</span> <span class="nf">transform_documents</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform sequence of documents by splitting them.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">documents</span><span class="p">))</span></div></div>
+</pre></div>
+
+            </div>
+            <div class="container">
+                <footer class="sk-content-footer">
+                                &copy; 2023, LangChain, Inc.
+                                    .
+                            Last updated
+                                on Nov 25, 2024.
+                </footer>
+            </div>
+        </div>
+    </div>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+</body>
+</html>

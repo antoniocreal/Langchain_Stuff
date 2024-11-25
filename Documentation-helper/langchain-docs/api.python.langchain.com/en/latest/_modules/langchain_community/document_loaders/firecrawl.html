@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <title>langchain_community.document_loaders.firecrawl &mdash; 🦜🔗 LangChain 0.2.17</title>
+    
+    <link rel="canonical"
+          href="https://api.python.langchain.com/en/latest/_modules/langchain_community/document_loaders/firecrawl.html"/>
+
+    
+
+    <link rel="stylesheet"
+          href="../../../_static/css/vendor/bootstrap.min.css"
+          type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/sphinx-dropdown.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/panels-bootstrap.min.css" type="text/css"/>
+            <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css"/>
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css"/>
+    <script id="documentation_options" data-url_root="../../../"
+            src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="langchain" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/_modules/langchain_community/document_loaders/firecrawl.html" /><meta name="readthedocs-http-status" content="200" /></head>
+<body>
+<div class="banner">
+    <p>This is a legacy site. Please use the latest <a href="https://python.langchain.com/v0.2/api_reference/reference.html">v0.2</a> and <a href="https://python.langchain.com/api_reference/">v0.3</a> API references instead.</p>
+</div>
+
+
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container px-0">
+    <button
+      id="sk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="sk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../../langchain_api_reference.html">LangChain</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../../core_api_reference.html">Core</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../../community_api_reference.html">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../../experimental_api_reference.html">Experimental</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../../../text_splitters_api_reference.html">Text splitters</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../airbyte_api_reference.html">airbyte</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../astradb_api_reference.html">astradb</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../aws_api_reference.html">aws</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../azure_dynamic_sessions_api_reference.html">azure-dynamic-sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../box_api_reference.html">box</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../chroma_api_reference.html">chroma</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../cohere_api_reference.html">cohere</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../couchbase_api_reference.html">couchbase</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../elasticsearch_api_reference.html">elasticsearch</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../exa_api_reference.html">exa</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../fireworks_api_reference.html">fireworks</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_community_api_reference.html">google-community</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_genai_api_reference.html">google-genai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../huggingface_api_reference.html">huggingface</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../milvus_api_reference.html">milvus</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../mistralai_api_reference.html">mistralai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../mongodb_api_reference.html">mongodb</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../nomic_api_reference.html">nomic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ollama_api_reference.html">ollama</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../openai_api_reference.html">openai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../pinecone_api_reference.html">pinecone</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../postgres_api_reference.html">postgres</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../prompty_api_reference.html">prompty</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../qdrant_api_reference.html">qdrant</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../robocorp_api_reference.html">robocorp</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../together_api_reference.html">together</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../unstructured_api_reference.html">unstructured</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../voyageai_api_reference.html">voyageai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../weaviate_api_reference.html">weaviate</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../ai21_api_reference.html">ai21</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../airbyte_api_reference.html">airbyte</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../astradb_api_reference.html">astradb</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../aws_api_reference.html">aws</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../azure_dynamic_sessions_api_reference.html">azure-dynamic-sessions</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../box_api_reference.html">box</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../chroma_api_reference.html">chroma</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../cohere_api_reference.html">cohere</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../couchbase_api_reference.html">couchbase</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../elasticsearch_api_reference.html">elasticsearch</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../fireworks_api_reference.html">fireworks</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_community_api_reference.html">google-community</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../huggingface_api_reference.html">huggingface</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../milvus_api_reference.html">milvus</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../mongodb_api_reference.html">mongodb</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../ollama_api_reference.html">ollama</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../openai_api_reference.html">openai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../pinecone_api_reference.html">pinecone</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../postgres_api_reference.html">postgres</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../prompty_api_reference.html">prompty</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../qdrant_api_reference.html">qdrant</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../robocorp_api_reference.html">robocorp</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../together_api_reference.html">together</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../unstructured_api_reference.html">unstructured</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../voyageai_api_reference.html">voyageai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../weaviate_api_reference.html">weaviate</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://python.langchain.com/">Docs</a>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../../search.html" method="get">
+            <input class="sk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="sk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="d-flex" id="sk-doc-wrapper">
+        <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
+        <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary"
+               for="sk-toggle-checkbox">Toggle Menu</label>
+        <div id="sk-sidebar-wrapper" class="border-right">
+            <div class="sk-sidebar-toc-wrapper">
+                    <div class="sk-sidebar-toc">
+                        
+                    </div>
+            </div>
+        </div>
+        <div id="sk-page-content-wrapper">
+            <div class="sk-page-content container-fluid body px-md-3" role="main">
+                
+  <h1>Source code for langchain_community.document_loaders.firecrawl</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">langchain_core.document_loaders</span> <span class="kn">import</span> <span class="n">BaseLoader</span>
+<span class="kn">from</span> <span class="nn">langchain_core.documents</span> <span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span> <span class="nn">langchain_core.utils</span> <span class="kn">import</span> <span class="n">get_from_env</span>
+
+
+<div class="viewcode-block" id="FireCrawlLoader"><a class="viewcode-back" href="../../../document_loaders/langchain_community.document_loaders.firecrawl.FireCrawlLoader.html#langchain_community.document_loaders.firecrawl.FireCrawlLoader">[docs]</a><span class="k">class</span> <span class="nc">FireCrawlLoader</span><span class="p">(</span><span class="n">BaseLoader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    FireCrawlLoader document loader integration</span>
+
+<span class="sd">    Setup:</span>
+<span class="sd">        Install ``firecrawl-py``,``langchain_community`` and set environment variable ``FIRECRAWL_API_KEY``.</span>
+
+<span class="sd">        .. code-block:: bash</span>
+
+<span class="sd">            pip install -U firecrawl-py langchain_community</span>
+<span class="sd">            export FIRECRAWL_API_KEY=&quot;your-api-key&quot;</span>
+
+<span class="sd">    Instantiate:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            from langchain_community.document_loaders import FireCrawlLoader</span>
+
+<span class="sd">            loader = FireCrawlLoader(</span>
+<span class="sd">                url = &quot;https://firecrawl.dev&quot;,</span>
+<span class="sd">                mode = &quot;crawl&quot;</span>
+<span class="sd">                # other params = ...</span>
+<span class="sd">            )</span>
+
+<span class="sd">    Lazy load:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            docs = []</span>
+<span class="sd">            docs_lazy = loader.lazy_load()</span>
+
+<span class="sd">            # async variant:</span>
+<span class="sd">            # docs_lazy = await loader.alazy_load()</span>
+
+<span class="sd">            for doc in docs_lazy:</span>
+<span class="sd">                docs.append(doc)</span>
+<span class="sd">            print(docs[0].page_content[:100])</span>
+<span class="sd">            print(docs[0].metadata)</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            Introducing [Smart Crawl!](https://www.firecrawl.dev/smart-crawl)</span>
+<span class="sd">             Join the waitlist to turn any web</span>
+<span class="sd">            {&#39;ogUrl&#39;: &#39;https://www.firecrawl.dev/&#39;, &#39;title&#39;: &#39;Home - Firecrawl&#39;, &#39;robots&#39;: &#39;follow, index&#39;, &#39;ogImage&#39;: &#39;https://www.firecrawl.dev/og.png?123&#39;, &#39;ogTitle&#39;: &#39;Firecrawl&#39;, &#39;sitemap&#39;: {&#39;lastmod&#39;: &#39;2024-08-12T00:28:16.681Z&#39;, &#39;changefreq&#39;: &#39;weekly&#39;}, &#39;keywords&#39;: &#39;Firecrawl,Markdown,Data,Mendable,Langchain&#39;, &#39;sourceURL&#39;: &#39;https://www.firecrawl.dev/&#39;, &#39;ogSiteName&#39;: &#39;Firecrawl&#39;, &#39;description&#39;: &#39;Firecrawl crawls and converts any website into clean markdown.&#39;, &#39;ogDescription&#39;: &#39;Turn any website into LLM-ready data.&#39;, &#39;pageStatusCode&#39;: 200, &#39;ogLocaleAlternate&#39;: []}</span>
+
+
+<span class="sd">    Async load:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            docs = await loader.aload()</span>
+<span class="sd">            print(docs[0].page_content[:100])</span>
+<span class="sd">            print(docs[0].metadata)</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            Introducing [Smart Crawl!](https://www.firecrawl.dev/smart-crawl)</span>
+<span class="sd">             Join the waitlist to turn any web</span>
+<span class="sd">            {&#39;ogUrl&#39;: &#39;https://www.firecrawl.dev/&#39;, &#39;title&#39;: &#39;Home - Firecrawl&#39;, &#39;robots&#39;: &#39;follow, index&#39;, &#39;ogImage&#39;: &#39;https://www.firecrawl.dev/og.png?123&#39;, &#39;ogTitle&#39;: &#39;Firecrawl&#39;, &#39;sitemap&#39;: {&#39;lastmod&#39;: &#39;2024-08-12T00:28:16.681Z&#39;, &#39;changefreq&#39;: &#39;weekly&#39;}, &#39;keywords&#39;: &#39;Firecrawl,Markdown,Data,Mendable,Langchain&#39;, &#39;sourceURL&#39;: &#39;https://www.firecrawl.dev/&#39;, &#39;ogSiteName&#39;: &#39;Firecrawl&#39;, &#39;description&#39;: &#39;Firecrawl crawls and converts any website into clean markdown.&#39;, &#39;ogDescription&#39;: &#39;Turn any website into LLM-ready data.&#39;, &#39;pageStatusCode&#39;: 200, &#39;ogLocaleAlternate&#39;: []}</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
+
+<div class="viewcode-block" id="FireCrawlLoader.__init__"><a class="viewcode-back" href="../../../document_loaders/langchain_community.document_loaders.firecrawl.FireCrawlLoader.html#langchain_community.document_loaders.firecrawl.FireCrawlLoader.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">api_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;crawl&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;crawl&quot;</span><span class="p">,</span>
+        <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize with API key and url.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            url: The url to be crawled.</span>
+<span class="sd">            api_key: The Firecrawl API key. If not specified will be read from env var</span>
+<span class="sd">                FIRECRAWL_API_KEY. Get an API key</span>
+<span class="sd">            api_url: The Firecrawl API URL. If not specified will be read from env var</span>
+<span class="sd">                FIRECRAWL_API_URL or defaults to https://api.firecrawl.dev.</span>
+<span class="sd">            mode: The mode to run the loader in. Default is &quot;crawl&quot;.</span>
+<span class="sd">                 Options include &quot;scrape&quot; (single url) and</span>
+<span class="sd">                 &quot;crawl&quot; (all accessible sub pages).</span>
+<span class="sd">            params: The parameters to pass to the Firecrawl API.</span>
+<span class="sd">                Examples include crawlerOptions.</span>
+<span class="sd">                For more details, visit: https://github.com/mendableai/firecrawl-py</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">firecrawl</span> <span class="kn">import</span> <span class="n">FirecrawlApp</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="s2">&quot;`firecrawl` package not found, please run `pip install firecrawl-py`&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;crawl&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape&quot;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unrecognized mode &#39;</span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">&#39;. Expected one of &#39;crawl&#39;, &#39;scrape&#39;.&quot;</span>
+            <span class="p">)</span>
+        <span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span> <span class="ow">or</span> <span class="n">get_from_env</span><span class="p">(</span><span class="s2">&quot;api_key&quot;</span><span class="p">,</span> <span class="s2">&quot;FIRECRAWL_API_KEY&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">firecrawl</span> <span class="o">=</span> <span class="n">FirecrawlApp</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="n">api_url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span></div>
+
+<div class="viewcode-block" id="FireCrawlLoader.lazy_load"><a class="viewcode-back" href="../../../document_loaders/langchain_community.document_loaders.firecrawl.FireCrawlLoader.html#langchain_community.document_loaders.firecrawl.FireCrawlLoader.lazy_load">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;scrape&quot;</span><span class="p">:</span>
+            <span class="n">firecrawl_docs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">firecrawl</span><span class="o">.</span><span class="n">scrape_url</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;crawl&quot;</span><span class="p">:</span>
+            <span class="n">firecrawl_docs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">firecrawl</span><span class="o">.</span><span class="n">crawl_url</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unrecognized mode &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">&#39;. Expected one of &#39;crawl&#39;, &#39;scrape&#39;.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">firecrawl_docs</span><span class="p">:</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="s2">&quot;extractorOptions&quot;</span><span class="p">,</span> <span class="p">{}</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;llm-extraction&quot;</span><span class="p">:</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;llm_extraction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;llm_extraction&quot;</span><span class="p">)</span>
+
+            <span class="k">yield</span> <span class="n">Document</span><span class="p">(</span><span class="n">page_content</span><span class="o">=</span><span class="n">doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span></div></div>
+</pre></div>
+
+            </div>
+            <div class="container">
+                <footer class="sk-content-footer">
+                                &copy; 2023, LangChain, Inc.
+                                    .
+                            Last updated
+                                on Nov 25, 2024.
+                </footer>
+            </div>
+        </div>
+    </div>
+<script src="../../../_static/js/vendor/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+</body>
+</html>
