@@ -18,7 +18,7 @@ from langchain_pinecone import PineconeVectorStore
 INDEX_NAME = "langchain-doc-index"
 
 def run_llm(query: str):
-    embeddings = OllamaEmbeddings(model = 'llama3')
+    embeddings = OllamaEmbeddings(model = 'mxbai-embed-large')  # Ollama embeddings model (It has to be an embeddings model with the same dimension of the Pinecone Vectorstore, can't be a regular LLM otherwise it won't do the emebddings)
     docsearch = PineconeVectorStore(index_name=INDEX_NAME, embedding=embeddings)
     chat = ChatOllama(model='mistral', verbose=True, temperature=0)
 
@@ -29,7 +29,13 @@ def run_llm(query: str):
         retriever=docsearch.as_retriever(), combine_docs_chain = stuff_documents_chain
     )
     result = qa.invoke(input={"input": query})
-    return result
+    new_result = {
+        "query": result["input"],
+        "result": result["answer"],
+        "source_documents": result["context"],
+    }
+    return new_result
+
 
 if __name__ == "__main__":
     res = run_llm(query="What is a LangChain Chain?")

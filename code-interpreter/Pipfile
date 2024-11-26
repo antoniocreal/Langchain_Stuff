@@ -4,10 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-shell = "*"
-beautifulsoup4 = "*"
-streamlit-chat = "*"
-firecrawl-py = "*"
+langchain = "*"
+langchainhub = "*"
+langchain-experimental = "*"
+langchain-community = "*"
+qrcode = "*"
 
 [dev-packages]
 
