@@ -24,16 +24,15 @@ if __name__ == "__main__":
     given the information {information} about a person I want you to create:
     1: short summary
     2. two interesting facts about them
-    \n{format_instructions}
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables = ['information'], template = summary_template,
+        input_variables = ['information'], 
+        template = summary_template,
     )
 
     llm = ChatOllama(model="mistral",temperature=0)
     # llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
-
 
 
     chain = summary_prompt_template | llm | summary_parser

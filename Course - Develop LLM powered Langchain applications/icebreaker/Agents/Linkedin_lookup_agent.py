@@ -13,8 +13,7 @@ from langchain.agents import (create_react_agent, AgentExecutor) # Create_react_
 from tools.tools import get_profile_url_tavily 
 
 
-# The tool will have the capability of searching for stuff online
-
+# The tool will have the capability of searching for stuff online on Linkedin
 def lookup(name: str) -> str:
     # llm = ChatOpenAI(
     #     temperature=0,
