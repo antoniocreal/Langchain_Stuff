@@ -2,7 +2,6 @@ import os
 
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-# from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_ollama import OllamaEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_community.chat_models import ChatOllama

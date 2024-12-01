@@ -16,7 +16,7 @@ def main():
     You have access to a python REPL, which you can sue to execute python code.
     If you get an error, debug your code and try again.
     Only use the output of your code to answer the question.
-    You might know the answer qithour running the code, but you should still run the code to get the answer.
+    You might know the answer without running the code, but you should still run the code to get the answer.
     If it does not seem like you can write code to answer the question, just return 'I don't know' as the answer.
     """
     base_prompt = hub.pull("langchain-ai/react-agent-template")

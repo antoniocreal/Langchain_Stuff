@@ -3,7 +3,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 from langchain_community.chat_models import ChatOllama
-from langchain_community.vectorstores import FAISS #Faiss turns objects like PDF's or text files and perform similarity search
+from langchain_community.vectorstores import FAISS # Faiss turns objects like PDF's or text files into vectorstores and can perform similarity search
 from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
@@ -20,10 +20,10 @@ if __name__ == "__main__":
     llm = ChatOllama(model = 'mistral')
 
     embeddings = OllamaEmbeddings(model = 'llama3')
-    vectorstore = FAISS.from_documents(docs, embeddings) # Faiss turns the documents, chunked, and turns it into vectors and turns them into faiss. This is stored in RAM in the local machine and ends up being a vectorstore
+    vectorstore = FAISS.from_documents(docs, embeddings) # Faiss reads the chunks from the documents and turns them into vectors. This is stored in RAM in the local machine and ends up being a vectorstore
     vectorstore.save_local("faiss_index_react")
 
-    print('Finishe Vectorstore...')
+    print('Finished Vectorstore...')
 
     new_vectorstore = FAISS.load_local("faiss_index_react", embeddings, allow_dangerous_deserialization=True)
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
